@@ -41,4 +41,16 @@ RSpec.describe Food, type: :model do
    
     expect(food.errors[:price]).not_to include("must be greater than or equal to %{count}")
   end
+
+  # describe 'self#by_letter' do
+  #   context 'with matching letter' do
+  #     it "should return a sorted array of results that match" do
+  #       food1 = FactoryBot.create(:food, name: 'Nasi Buk')
+  #       food2 = FactoryBot.create(:food, name: 'Sate Ayam Madura')
+  #       food3 = FactoryBot.create(:food, name: 'Soto Udang')
+  
+  #       expect(Food.by_letter("S")).to eq([food3, food2])
+  #     end
+  #   end
+  # end
 end

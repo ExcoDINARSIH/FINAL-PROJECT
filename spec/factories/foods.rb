@@ -4,4 +4,10 @@ FactoryBot.define do
     description { Faker::Food.description }
     price { Faker::Number.positive }
   end
+
+  factory :invalid_food, parent: :food do
+    name { nil }
+    description { nil }
+    price { nil }
+  end
 end
