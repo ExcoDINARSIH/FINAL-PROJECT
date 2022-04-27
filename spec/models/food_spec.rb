@@ -52,4 +52,16 @@ RSpec.describe Food, type: :model do
 
     expect(food.errors[:price]).to include("can't be blank")
   end
+
+  it 'is invalid with a price below 0.01' do
+    food = Food.new(
+      name: 'Nasi Buk',
+      description: 'Madura special food consist of rice mixed bamboo shoots, fried empal, and jerky.',
+      price: nil
+    )
+
+    food.valid?
+   
+    expect(food.errors[:price]).not_to include("must be greater than or equal to %{count}")
+  end
 end
