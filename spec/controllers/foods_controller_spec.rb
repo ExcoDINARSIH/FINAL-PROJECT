@@ -2,35 +2,35 @@ require 'rails_helper'
 
 RSpec.describe FoodsController do
     describe FoodsController do
-        # describe 'GET #index' do
-        #     context 'with params[:letter]' do
-        #       it "populates an array of foods starting with the letter" do
-        #         nasi_buk = create(:food, name: "Nasi Buk")
-        #         sate_ayam_madura = create(:food, name: "Sate Ayam Madura")
-        #         get :index, params: { letter: 'N' }
-        #         expect(assigns(:foods)).to match_array([nasi_buk])
-        #       end
+        describe 'GET #index' do
+            context 'with params[:letter]' do
+              it "populates an array of foods starting with the letter" do
+                nasi_buk = create(:food, name: "Nasi Buk")
+                sate_ayam_madura = create(:food, name: "Sate Ayam Madura")
+                get :index, params: { letter: 'N' }
+                expect(assigns(:foods)).to match_array([nasi_buk])
+              end
         
-        #       it "renders the :index template" do
-        #         get :index, params: { letter: 'N' }
-        #         expect(response).to render_template :index
-        #       end
-        #     end
+              it "renders the :index template" do
+                get :index, params: { letter: 'N' }
+                expect(response).to render_template :index
+              end
+            end
         
-        #     context 'without params[:letter]' do
-        #       it "populates an array of all foods" do 
-        #         nasi_buk = create(:food, name: "Nasi Buk")
-        #         sate_ayam_madura = create(:food, name: "Sate Ayam Madura")
-        #         get :index
-        #         expect(assigns(:foods)).to match_array([nasi_buk, sate_ayam_madura])
-        #       end
+            context 'without params[:letter]' do
+              it "populates an array of all foods" do 
+                nasi_buk = create(:food, name: "Nasi Buk")
+                sate_ayam_madura = create(:food, name: "Sate Ayam Madura")
+                get :index
+                expect(assigns(:foods)).to match_array([nasi_buk, sate_ayam_madura])
+              end
         
-        #       it "renders the :index template" do
-        #         get :index
-        #         expect(response).to render_template :index
-        #       end
-        #     end
-        # end
+              it "renders the :index template" do
+                get :index
+                expect(response).to render_template :index
+              end
+            end
+        end
 
         describe 'GET #show' do
             it "assigns the requested food to @food" do
