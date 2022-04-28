@@ -3,11 +3,13 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
+    @foods = Food.all
     @foods = params[:letter].nil? ? Food.all : Food.by_letter(params[:letter])
   end
   
   # GET /foods/1 or /foods/1.json
   def show
+    @food = Food.find(params[:id])
   end
 
   # GET /foods/new
@@ -17,6 +19,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/1/edit
   def edit
+    @food = Food.find(params[:id])
   end
 
   # POST /foods or /foods.json
